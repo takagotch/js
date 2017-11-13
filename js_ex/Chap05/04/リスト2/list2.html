@@ -1,0 +1,18 @@
+<b>このiframeは javascript150.bitbucket.org に配置しています。</b>
+<div id="test">メッセージを送信してください。</div>
+<script>
+  function appendEventListener(domElement, eventType, eventHandler) {
+    if (domElement.addEventListener) {
+      domElement.addEventListener(eventType, eventHandler, false);
+      } else {
+      domElement.attachEvent("on" + eventType, eventHandler);
+    }
+  }
+
+  appendEventListener(window, "message", function(e){
+    // 必要に応じて送信元のチェックを行う
+    // if (e.origin === "http://fiddle.jshell.net") {}
+    document.getElementById("test").textContent = "Receive from " + e.origin + ": " + e.data;
+  });
+</script>
+

@@ -1,0 +1,14 @@
+#mouse_move {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	height: 200px;
+	width: 300px;
+	border: 1px #1C79C6 solid;
+}
+#out {
+	position: fix;
+	left: 5px;
+	top: 5px;
+}
+

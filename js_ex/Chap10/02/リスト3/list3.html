@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>10-02: リスト3: 回転速度を含めた値を検出する</title>
+</head>
+<body>
+  <div id="log" style="font-family:monospace;white-space:pre;"></div>
+  <script>
+    var log = document.getElementById('log');
+    if ('ondevicemotion' in window) {
+      window.addEventListener('devicemotion', devicemotion, false);
+      function devicemotion(e) {
+        var logText = '';
+        if (e.accelerationIncludingGravity) {
+          logText += 'x:     ' + e.accelerationIncludingGravity.x + '<br>';
+          logText += 'y:     ' + e.accelerationIncludingGravity.y + '<br>';
+          logText += 'z:     ' + e.accelerationIncludingGravity.z + '<br>';
+        } else {
+          logText += '重力加速度に対応していないデバイスです。';
+        }
+
+        if (e.rotationRate) {
+          logText += 'alpha: ' + e.rotationRate.alpha + '<br>';
+          logText += 'beta:  ' + e.rotationRate.beta + '<br>';
+          logText += 'gamma: ' + e.rotationRate.gamma + '<br>';
+        } else {
+          logText += '回転速度に対応していないデバイスです。';
+        }
+
+        log.innerHTML = logText;
+      }
+    } else {
+      log.innerHTML = "傾き検知を利用できないデバイスです。";
+    }
+  </script>
+</body>
+</html>
+

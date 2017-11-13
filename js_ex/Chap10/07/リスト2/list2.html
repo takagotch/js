@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-07: リスト2: クライアントサイドの実装</title>
+</head>
+<body>
+  <input type="text" id="textbox">
+  <script>
+    // ユーザ名をランダムに生成
+    var userName = 'ゲスト' + Math.floor(Math.random() * 100);
+
+    // WebSocketサーバに接続(ローカル環境で実行している場合)
+    var ws = new WebSocket('ws://localhost:8888/');
+
+    // WebSockeサーバ接続イベントを捕捉
+    ws.onopen = function() {
+      // 入室情報を文字列に変換して送信
+      ws.send(JSON.stringify({
+        type: 'join',
+        user: userName
+      }));
+    };
+
+    textbox.onkeydown = function(event) {
+      // エンターキーを押したとき
+      if (event.keyCode === 13) {
+        // 発言情報を文字列に変換して送信
+        ws.send(JSON.stringify({
+          type: 'chat',
+          user: userName,
+          text: textbox.value
+        }));
+        textbox.value = '';
+      }
+    };
+
+    // メッセージ受信イベントを捕捉
+    ws.onmessage = function(event) {
+      // 受信したメッセージを復元
+      var data = JSON.parse(event.data),
+      item = document.createElement('li');
+
+      // 受信したメッセージを解釈する
+      if (data.type === 'join') {
+        item.textContent = data.user + 'が入室しました';
+        } else if (data.type === 'chat') {
+        item.textContent = data.user + 'の発言: ' + data.text;
+        } else {
+        item.textContent = '不正なメッセージを受信しました'
+      }
+      document.body.appendChild(item);
+    };
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-04: リスト1: 画像をグレースケールで表示する</title>
+</head>
+<body>
+  <img src="sample.jpg" id="myImage"><br>
+  <input type="button" id="toGray" value="convert grayscale" onclick="toGrayscale()"><br>
+  <canvas id="myCanvas"></canvas>
+  <script>
+    function toGrayscale() {
+      var img = document.getElementById('myImage');
+      var canvas = document.getElementById('myCanvas');
+      var width = canvas.width = img.width;
+      var height = canvas.height = img.height;
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      var imgData = ctx.getImageData(0, 0, width, height);
+      var i, red, green, blue, gray;
+      for (i = 0; i < imgData.data.length; i += 4) {
+        red = imgData.data[i];
+        green = imgData.data[i + 1];
+        blue = imgData.data[i + 2];
+        gray = parseInt((red + green + blue) / 3, 10);
+        imgData.data[i] = gray;
+        imgData.data[i + 1] = gray;
+        imgData.data[i + 2] = gray;
+      }
+      ctx.putImageData(imgData, 0, 0);
+    }
+  </script>
+</body>
+</html>
+

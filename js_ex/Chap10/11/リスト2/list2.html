@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-11: リスト2: JavaScriptから独自データにアクセスする</title>
+</head>
+<body>
+  <ul>
+    <li data-type="fruit">Apple</li>
+    <li data-type="fruit">Orange</li>
+    <li data-type="meat">Pork</li>
+  </ul>
+  <script>
+    // data-type属性がfruitのもののみ抽出
+    var list = document.getElementsByTagName('li');
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].dataset.type === 'fruit') {
+        alert(list[i].innerText + ' is fruit!');
+      }
+    }
+  </script>
+</body>
+</html>
+

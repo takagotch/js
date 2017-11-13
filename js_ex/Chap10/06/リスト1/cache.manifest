@@ -1,0 +1,13 @@
+CACHE MANIFEST
+
+#VERSION 1.0.0
+
+# キャッシュ対象
+CACHE:
+app.js
+http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css
+
+# 毎回ネットワークから取得
+NETWORK:
+api.php
+

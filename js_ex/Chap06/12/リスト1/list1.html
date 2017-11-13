@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>06-12: リスト1: jQuery.throttleを利用する例</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript' src="http://github.com/cowboy/jquery-throttle-debounce/raw/v1.1/jquery.ba-throttle-debounce.js"></script>
+  <style type='text/css'>
+    #mouseArea {
+      width: 200px;
+      height: 200px;
+      border: 3px ridge;
+    }
+  </style>
+</head>
+<body>
+  <div id="mouseArea">move mouse in this area</div>
+  <button id="unbind">unbind no_trailing=false</button><br/>
+  throttle無し:<br/>
+  <span id="noThrottle"></span><br/>
+  no_trailing=false:<br/>
+  <span id="noTrailing"></span><br/>
+  no_trailing=true:<br/>
+  <span id="trailing"></span>
+  <script type='text/javascript' src='./list1.js'></script>
+</body>
+</html>
+

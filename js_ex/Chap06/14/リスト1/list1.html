@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>06-12: リスト3: jQueryを使わず間引く方法</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript' src="http://javascript150.bitbucket.org/scripts/assert.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://javascript150.bitbucket.org/styles/assert.css">
+  <meta name="viewport" content="width=device-width; initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <style>
+  #gesture_area {
+    width: 300px;
+    height: 300px;
+    border: 3px ridge;
+  }
+  </style>
+</head>
+<body>
+  ジェスチャー認識エリア：
+  <div id="gesture_area"></div>
+  結果：<br/>
+  [凡例]　t: touches, ct: changeTouches, tt: targetTouches<br/>
+  座標表記: (clientX,Y)(pageX,Y)(screenX,Y)<br/>
+
+  スマートフォンはこちら<br/>
+  <img alt="" title="" width="210" height="210" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAADSAQMAAAAFVwwBAAAABlBMVEX///8AAABVwtN+AAABhklEQVRYhdWY0Y3DMAxDBXiAjOTVM1IGMMATKdlpbwLWcA8Xv37YKiXKifiRMcARF9aFiFmTS48Zyw+fNYj7cdixiYf7Xtc9kBMrZv71ZPWQ8V2KtS2L686ZshjClowiyG+s4BnGM//rxYQpx3Lpc37lnwfr6pS7x51RfpfCjO1SteINd+abIUOWAJ6B5TX/h5i04sS473m+sWQAoWSzYkqqHfHrhsShk5ixTDDsA0gKMtcwZAr41CoFAdgyRpm1gJ1KB3qYsdr6KjV89AFdtZyYij6ZlNG+tcxYhliuz8kONdXAWtA55sRQBStkVCyslAiGGQuJdVR5VaBrRb+DE6NSgfbR6v92LXBj2m7lP6oidC9oxEoTnVQ8TKztr1asCusWrg6jHGtN2LBqoZaUUW5aFhtmrMbporr/O15lw/odhIIOlGrPHc+J9TuIvtfJVs8ZrFjfmSWOclbAm1XDN7oDcGRDntpVVdcn2LHQOwiZq7oo3ffuzjwftnOsVksTr1fZsB8ZfyB6VuDJE1O+AAAAAElFTkSuQmCC" />
+  <br/>
+  <script type='text/javascript' src='./list1.js'></script>
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+.icons {
+	background-image: url(./icons.png);
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+}
+.battery_empty  { background-position: -32px -32px; }
+.battery_half   { background-position: -64px -32px; }
+.battery_full   { background-position: -96px -32px; }
+.battery_charge { background-position:   0px -32px; }
+.arrow_up       { background-position:   0px   0px; }
+.arrow_down     { background-position: -32px   0px; }
+.arrow_left     { background-position: -64px   0px; }
+.arrow_right    { background-position: -96px   0px; }
+#arrow { cursor: pointer; }
+

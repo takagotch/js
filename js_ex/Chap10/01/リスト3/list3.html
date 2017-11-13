@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-01: リスト3: es5-shim.jsを利用する場合</title>
+  <script type='text/javascript' src='./es5-shim.js'></script>
+  <script>
+    // レガシーブラウザでも Array.isArray を利用可能
+    alert(Array.isArray([1, 2, 3]));  //-> true;
+    alert(Array.isArray({ foo:'bar' }));  //-> false;
+  </script>
+</head>
+<body>
+</body>
+</html>
+

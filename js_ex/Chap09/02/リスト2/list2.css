@@ -1,0 +1,36 @@
+#sample{
+	/* テキスト */
+	postion: absolute;
+	width: 300px;
+	height: 150px;
+	text-align: center;
+	font-size: 40px;
+	background-color: #C0C0C0;
+
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: #090909 5px 5px 5px;
+
+	border-radius: 10px;
+	box-shadow: #090909 5px 5px 5px;
+}
+#sample_detail {
+	font-size:28px;
+	color: #808080;
+}
+#tag {
+	/* -for webkit- */
+	-webkit-transition: 1s ease-in;
+	/* -for mozilla- */
+	-moz-transition: 1s ease-in;
+	transition:  1s ease-in;
+}
+#tag:hover {
+	/* -for webkit- */
+	-webkit-transform: rotate(360deg) scale(1.0);
+	/* -for mozilla- */
+	-moz-transform: rotate(360deg) scale(1.0);
+	/* -for opera- */
+	-o-transform: rotate(360deg) scale(1.0);
+	transform: rotate(360deg) scale(1.0);
+}
+

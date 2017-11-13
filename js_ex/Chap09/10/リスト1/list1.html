@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>09-10: リスト1: スクロールメソッドの例</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <link rel="stylesheet" type="text/css" href="http://jsfiddle.net/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="http://jsfiddle.net/css/result-light.css">
+  <style type='text/css'>
+    #control {
+      position: fixed;
+      right: 0;
+      top: 0;
+      background-color: gray;
+    }
+    #control span {
+      color: white;
+      margin: 4px;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: .9em;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="control">
+    <span id="scroll1">scrollTo(0, 100)</span>
+    <span id="scroll2">scrollBy(0, 40)</span>
+    <span id="scroll3">div5.scrollIntoView(true)</span>
+    <span id="scroll4">div5.scrollIntoView(false)</span>
+  </div>
+  <div id="div1">div1</div><br/><br/><br/><br/><br/>
+  <div id="div2">div2</div><br/><br/><br/><br/><br/>
+  <div id="div3">div3</div><br/><br/><br/><br/><br/>
+  <div id="div4">div4</div><br/><br/><br/><br/><br/>
+  <div id="div5">div5</div><br/><br/><br/><br/><br/>
+  <div id="div6">div6</div><br/><br/><br/><br/><br/>
+  <div id="div7">div7</div><br/><br/><br/><br/><br/>
+  <script type='text/javascript' src='./list1.js'></script>
+</body>
+</html>

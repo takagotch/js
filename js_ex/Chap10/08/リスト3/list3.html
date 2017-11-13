@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+Workerに渡すスクリプトはFileスキーム(file://)では読み込みに失敗します。
+sample: http://javascript150.bitbucket.org/10-08/list3.html
+-->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-07: リスト3: Web Workersを利用したファイル読み込み</title>
+</head>
+<body>
+  <input type="file" onchange="fileSelect(this)" multiple>
+  <script>
+    // ワーカの生成
+    var worker = new Worker('list3.js');
+
+    // ファイル選択イベントを捕捉
+    function fileSelect(target) {
+      // ワーカにメッセージ(FileListオブジェクト)を送信
+      worker.postMessage(target.files);
+    }
+
+    // ワーカからのメッセージを待ち受ける
+    worker.onmessage = function(event) {
+      alert(event.data);
+    };
+  </script>
+</body>
+</html>

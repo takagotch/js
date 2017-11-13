@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>09-14: リスト1: 簡単な独自ツールチップの作成</title>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="http://jsfiddle.net/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="http://jsfiddle.net/css/result-light.css">
+  <style type='text/css'>
+    div {
+      margin: 10px;
+      padding: 4px;
+      border: 1px solid #999;
+    }
+
+    #tooltip {
+      display: none;
+      position: absolute;
+      padding: 10px;
+      font-size: 0.8em;
+      background-color: #09F;
+      color: #FFF;
+      z-index: 9999;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div title="デフォルトツールチップ">
+    [デフォルトツールチップ]マウスを乗せてください。
+  </div>
+  <br/>
+  <div data-tooltip="独自ツールチップ" class="tooltip">
+    [独自ツールチップ]マウスを乗せてください。
+  </div>
+  <script type='text/javascript' src='./list1.js'></script>
+</body>
+</html>

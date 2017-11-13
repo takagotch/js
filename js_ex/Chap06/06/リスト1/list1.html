@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>06-06: リスト1: jQueryを使ってHTML5のドラッグアンドドロップを利用する</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript' src="http://javascript150.bitbucket.org/scripts/assert.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://javascript150.bitbucket.org/styles/assert.css">
+  <style type='text/css'>
+    .area {
+      border: ridge 3px gray;
+      width: 330px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    img.drag {
+      vertical-align: bottom;
+      margin: 0 4px;
+    }
+    div.drag {
+      width: 70px;
+      height: 60px;
+      background-color: gray;
+      display: inline-block;
+      line-height: 60px;
+      margin: 0 4px;
+      font-weight: bold;
+      font-size: 100%;
+      padding: 0 4px;
+    }
+  </style>
+</head>
+<body>
+  領域1:
+  <div class="area">
+    <img id="img1" class="drag" src="http://goo.gl/q92df" draggable="true" height="60px" height="80px"/>
+    <img id="img2" class="drag" src="http://goo.gl/9MKyd" draggable="true" height="60px" height="80px"/>
+    <div id="div1" class="drag" draggable="true">何でも可</div>
+  </div>
+
+  領域2:
+  <div class="area"></div>
+  <script type='text/javascript' src="./list1.js"></script>
+</body>
+</html>

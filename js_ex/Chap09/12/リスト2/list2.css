@@ -1,0 +1,12 @@
+.progress {
+	border: 2px solid #999;
+	width: 230px;
+	height: 30px;
+}
+.progress div {
+	background-color: #339;
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+

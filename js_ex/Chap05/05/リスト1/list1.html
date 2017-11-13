@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- jsFiddle: http://jsfiddle.net/javascript150/6zjya/ -->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>05-05: リスト1: script srcを利用して、外部ドメインへの通信を行う</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript'>//<![CDATA[ 
+    $(window).load(function(){
+      $(function() {
+        $("input#search").on("click", function() {
+          var keyword = $("input#keyword").val();
+          console.log(keyword);
+          return keyword.length ? search(keyword) : false;
+        });
+      });
+
+      function search(word) {
+        console.log("test");
+        $.extend({
+          myCallback: function(data){
+            $("#result").empty();
+            $.each(data.results, function(i, item) {
+              $("#result").append($("<li />")
+              .append($("<img />").attr("src", item.profile_image_url))
+              .append($("<p>").append(item.from_user+':'+item.text)));});
+          }
+        });
+
+        $("<script>")
+        .attr('type', 'text/javascript')
+        .attr('src', "http://search.twitter.com/search.json?rpp=10&callback=jQuery.myCallback&q=" + word)
+          .appendTo($("head"));
+      }
+    });//]]>  
+  </script>
+</head>
+<body>
+  <input type="text" id="keyword" value="test" />
+  <input type="button" value="twitter keyword search" id="search" />
+  <div id="result"></div>
+</body>
+</html>
+

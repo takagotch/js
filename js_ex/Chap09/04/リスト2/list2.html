@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>09-04: リスト2: 各種方法でDOMにノードを追加する</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript' src="http://javascript150.bitbucket.org/scripts/assert.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://javascript150.bitbucket.org/styles/assert.css">
+  <style type='text/css'>
+    input {
+      width: 20em;
+    }
+  </style>
+</head>
+<body>
+  入力サンプル:
+  <input type="text" value='<img src="" onerror="alert(123);"/>' readonly /><hr/>
+  対策なし: <input id="xssInputPlain" type="text" /><br/>
+  結果: <div id="resultPlain">&nbsp;</div>
+  エスケープ: <input id="xssInputEscape" type="text" /><br/>
+  結果: <div id="resultEscape">&nbsp;</div>
+  Textノード: <input id="xssInputTextNode" type="text" /><br/>
+  結果: <div id="resultTextNode">&nbsp;</div>
+  jQuery: <input id="xssInputJQuery" type="text" /><br/>
+  結果: <div id="resultJQuery">&nbsp;</div>
+  <script type='text/javascript' src='./list2.js'></script>
+</body>
+</html>
+

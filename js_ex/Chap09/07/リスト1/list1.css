@@ -1,0 +1,10 @@
+body {
+	font-size: .8em;
+}
+#target {
+	background-color: gray;
+	width: 100px; height: 120px;
+	border: 1px solid black;
+	padding: 2px; margin: 4px;
+}
+

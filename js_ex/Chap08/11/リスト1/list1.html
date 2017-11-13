@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- http://jsfiddle.net/javascript150/2gmFm/ -->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>08-11: リスト1: CSS Spriteを使う例</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript' src="http://javascript150.bitbucket.org/scripts/assert.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://javascript150.bitbucket.org/styles/assert.css">
+  <link rel="stylesheet" type="text/css" href="./list1.css">
+  <script type='text/javascript'>//<![CDATA[ 
+    $(window).load(function(){
+      var batteryClasses = ["battery_empty", "battery_half", "battery_full", "battery_charge"];
+      var $battery = $("#battery");
+      setInterval(function() {
+        var nextClass = batteryClasses.shift();
+        batteryClasses.push(nextClass);
+        $battery.removeClass(batteryClasses.join(" ")).addClass(nextClass);
+      }, 1500);
+
+      var arrowClasses = ["arrow_right", "arrow_down", "arrow_left", "arrow_up"];
+      $("#arrow").click(function() {
+        var nextClass = arrowClasses.shift();
+        arrowClasses.push(nextClass);
+        $(this).removeClass(arrowClasses.join(" ")).addClass(nextClass);
+      });
+    });//]]>  
+  </script>
+</head>
+<body>
+  <div id="battery" class="icons battery_charge"></div>
+  <hr/>
+  <div id="arrow" class="icons arrow_up"></div>
+  Click!
+</body>
+</html>

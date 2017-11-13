@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- http://jsfiddle.net/javascript150/tHvkw/ -->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>05-11: リスト2: LABjsを使って並列に読み込み</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+  <script type='text/javascript' src="http://javascript150.bitbucket.org/05-11/examples/LAB.js"></script>
+  <script type='text/javascript' src="http://javascript150.bitbucket.org/scripts/assert.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://javascript150.bitbucket.org/styles/assert.css">
+  <script type="text/javascript">
+    $LAB
+    .script("http://delay-echo.herokuapp.com/echo/script00.js?wait=2000&echo=log('00');")
+    .script("http://delay-echo.herokuapp.com/echo/script01.js?wait=2000&echo=log('01');")
+    .script("http://delay-echo.herokuapp.com/echo/script02.js?wait=2000&echo=log('02');")
+    .script("http://delay-echo.herokuapp.com/echo/script03.js?wait=2000&echo=log('03');")
+    .script("http://delay-echo.herokuapp.com/echo/script04.js?wait=2000&echo=log('04');")
+    .wait(function(){
+      log("Loaded!");
+    });
+  </script>
+</head>
+<body id="body">
+</body>
+</html>

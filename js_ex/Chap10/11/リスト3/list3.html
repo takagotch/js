@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-11: リスト3: ハイフンを含む独自データ属性を扱う</title>
+</head>
+<body>
+  <div id="test" data-position-x="10" data-position-y="20"></div>
+  <script>
+    // ハイフンを含む独自データ属性はlowerCamelCaseで参照可能
+    var node = document.getElementById('test'); var x = node.dataset.positionX;
+    var y = node.dataset.positionY;
+    alert('x: ' + x + ', y: ' + y);
+  </script>
+</body>
+</html>
+

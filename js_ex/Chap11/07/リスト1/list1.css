@@ -1,0 +1,15 @@
+* {
+	margin:0;
+	padding:0;
+}
+dl.accordion dt {
+	cursor:pointer;
+	background-color:#9ACD32;
+	color:#FFF;
+	width: 500px;
+}
+dl.accordion dd {
+	background-color:#FFC;
+	width: 500px;
+}
+

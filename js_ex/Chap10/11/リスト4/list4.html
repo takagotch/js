@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10-11: リスト4: jQueryから独自データ属性を扱う</title>
+</head>
+<body>
+  <div id="test" data-user-id="12345" data-user-data='{"name":"foo"}'></div>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    alert('userId: ' + $('#test').data('userId')); // 12345
+    alert('userName: ' + $('#test').data('userData').name); // foo
+  </script>
+</body>
+</html>
+
